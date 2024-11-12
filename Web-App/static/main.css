@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+/* Model Section */
+.content{
+    width:50%;
+    height: 400px;
+    margin: 5px;
+}
+
+/* Chatbot Sectio n */
+.sidebar-chat{
+    width:30%;
+    margin: 5px;
+}
+
+.chatbot-content{
+    width:70%;
+    margin: 5px;
+}
+
+/* model section */
+button {
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    align-self: center;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 1.2em;
+    text-align: center;
+}

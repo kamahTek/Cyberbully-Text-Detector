@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Science Capstone Project </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- <p class="font-bold underline">JAMES KAMAU</p> -->
+    
+    <!-- Header -->
+    <div class=" bg-teal-950 text-white w-full py-6 font-bold flex items-center justify-center fixed top-0">
+        <h1 class="text-4xl">CyberBullying Text Detector</h1>
+    </div>
+
+    <!-- Brief description about our web-app  -->
+    <div class="px-14 mt-24 py-4">
+        <p class="text-left"> Cyberbullying is the use of technology to harass, threaten, embarrass, or target another person. Online threats and mean, aggressive, or rude texts, tweets, posts, or messages all count. So does posting personal information, pictures, or videos designed to hurt or embarrass someone else.Cyberbullying is the use of technology to harass, threaten, embarrass, or target another person. Online threats and mean, aggressive, or rude texts, tweets, posts, or messages all count. So does posting personal information, pictures, or videos designed to hurt or embarrass someone else.</p>
+        
+        <p><mark class="bg-teal-900 text-white pb-1">This web-application helps you assess how aggressive or welcoming your words or text may appear before sharing them on any social media platform.</mark></p>
+
+    </div>
+
+    <!-- cyberbullying text detection input and gpt prompt -->
+    <div class="mt-2 py-2 flex items-center justify-center">
+        
+        <!-- Model input for user -->
+        <div class="w-2/3 bg-teal-900  px-10 py-4 rounded-md"> 
+            <p class="text-center text-white text-2xl font-normal m-2 p-2">Enter word or text to verify</p>
+
+            <!-- text area for users -->
+            <form id="predict-form" action="/predict" method="post">
+                <div class="mx-20 p-2">
+                    <textarea id="text" class="w-full px-5 py-2 border-0 focus:outline-none" name="text" rows="5" placeholder="Enter text here" required></textarea>
+                </div>
+                <div class="mt-3 mx-20 p-2 flex items-center justify-center">
+                    <button class="rounded-md py-2 px-4 bg-teal-500 text-white hover:bg-green-500" type="submit">CLASSIFY</button>
+                </div>
+            </form>
+
+            {% if text_prediction %}
+                <div id="result" class="flex items-center justify-center mx-20 mt-5 text-center py-1">
+                    <p class="bg-teal-50 text-center p-5 w-fit capitalize">{{ text_prediction }}</p>
+                </div>    
+            {% endif %}   
+        </div>
+
+    </div>
+
+    <!-- Group Member -->
+    <div class="member-profile my-2 py-2 px-52 flex "></div>
+    
+    <!-- js file -->
+    <script src="{{ url_for('static', filename='profile.js') }}"></script>
+
+</body>
+</html>
